@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Herramientas</title>
+        <link rel="stylesheet" href ="herramientas.css"/>
+    </head>
+    <body>
+        <header class ="header">
+            <div class="logo">
+                <img src = "IMGS/Logo.png" width="50">
+            </div>
+            
+            <nav> 
+                <ul class="nav-links">
+                    <li><a href = "index.html">Inicio</a></li>
+                    <li><a href = "herramientas.html">Herramientas</a></li>
+                    <li><a href = "nosotros.html">Nosotros</a></li>
+                </ul>
+            </nav>
+            <a class ="btn" href="Traductor-SLD.html"><button> Traductor SLD</button></a>
+            
+            <a onclick="openNav()" class="menu" href="#"><button>Menú</button></a>
+        
+            <div class = "overlay" id ="mobile-menu">
+                <a onclick="closeNav()" href="" class="close">&times;</a>
+                <div class="overlay-content">
+                    <a href = "index.html">Inicio</a>
+                    <a href = "herramientas.html">Herramientas</a>
+                    <a href = "nosotros.html">Nosotros</a>
+                    <a href = "Traductor-SLD.html">Traductor-SLD</a>
+                </div>
+            </div>
+       
+        </header>
+        
+        <script type="text/javascript" src="nav.js"></script>
+
+        <!------------SECCION 1-------------------------->
+        
+        <section class = "herramientas" id="Herramientas">
+            <div class ="heading">
+                <span><br>Nuestras herramientas</span>
+                <h2> <br>Algunas herramientas que podrían interesarte </h2>
+            </div>
+            
+            <div class="herramientas-container">
+                <div class = "h-box">
+                    <div class ="box-img.">
+                        <img src ="IMGS/Herramientas.2.png">
+                    </div>
+                    <h3>Aprende sobre la lengua de señas</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit.
+                        Eveniet consequatur error<br> molestiae officiis obcaecati quo.</p>
+                </div> 
+            
+                <div class = "h-box">
+                    <div class ="box-img.">
+                        <br><img src ="IMGS/Herramientas.1.png">
+                    </div>
+                    <h3><br><br>Aprende sobre la lengua de señas</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit.
+                        Eveniet consequatur error <br>molestiae officiis obcaecati quo.</p>
+                </div> 
+
+                 
+            </div>          
+        </section>
+    </body>
+</html>
