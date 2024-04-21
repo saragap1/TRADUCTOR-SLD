@@ -1,0 +1,11 @@
+.abc {
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns:repeat(6,1fr);
+    align-content:space-around; 
+}
+
+.abc > button{
+    padding: 20% 0;
+    margin: 10%;
+}

@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  APP:
+    image: node:21
+    container_name: node-SDL
+    ports:
+      - 3000:3000
+    build: .
+    command: node index.js
+  
+  DB:
+    image: mongo:7.0.8
+    container_name: mongo-SDL 
+    ports:
+      - 27017:27017
