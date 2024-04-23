@@ -9,3 +9,15 @@
     padding: 20% 0;
     margin: 10%;
 }
+
+.full_vid_box {
+    margin: auto;
+}
+.mini-pic-div{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+.mini-pic-div > #mini_vid{
+    margin-right: 40px;
+}
