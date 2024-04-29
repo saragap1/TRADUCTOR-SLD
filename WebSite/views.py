@@ -6,6 +6,10 @@ def index(request):
 def traductor_aplicacion(request):
     return render(request, 'Traductor-SLD.html')
 
+def traductor_aplicacion_inteligencia(request):
+    return render(request, 'Traductor-SLD-inteligencia.html')
+
+
 def herramientas(request):
     return render(request, 'herramientas.html')
 

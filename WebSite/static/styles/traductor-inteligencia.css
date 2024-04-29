@@ -15,7 +15,7 @@
 :root{
     --big-font: 4.5rem;
     --h2-font: 1.5rem;
-    --p-font: 0.5rem;
+    --p-font: 0.9rem;
 }
 
 body {
@@ -202,7 +202,7 @@ header {
 }
 
 .botones:hover{
-    background-color: #FFFFFF;
+    background-color: #FFFFFF ;
     color: #0B1957;
     transform:scale(1.1);
 }
@@ -210,7 +210,6 @@ header {
 .modelo-text{
     color: #0B1957;
     padding: 10%;
-    font-size: smaller;
 }
 
 
