@@ -1,4 +1,7 @@
+{% extends 'layouts/menu.html' %}
 {% load static %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html>
@@ -6,61 +9,36 @@
         <title>Traductor SLD</title>
         <link rel="stylesheet" href ="{% static '/styles/traductor.css' %}"/>
     </head>
-    <body>
-        <header class ="header">
-            <div class="logo">
-                <img src = "{% static '/imgs/Logo.png' %}" width="50">
-            </div>
-            
-            <nav> 
-                <ul class="nav-links">
-                    <li><a href = "index.html">Inicio</a></li>
-                    <li><a href = "herramientas.html">Herramientas</a></li>
-                    <li><a href = "nosotros.html">Nosotros</a></li>
-                </ul>
-            </nav>
-            <a class ="btn" href="Traductor-SLD.html"><button> Traductor SLD</button></a>
-            
-            <a onclick="openNav()" class="menu" href="#"><button>Menú</button></a>
-        
-            <div class = "overlay" id ="mobile-menu">
-                <a onclick="closeNav()" href="" class="close">&times;</a>
-                <div class="overlay-content">
-                    <a href = "index.html">Inicio</a>
-                    <a href = "herramientas.html">Herramientas</a>
-                    <a href = "nosotros.html">Nosotros</a>
-                    <a href = "Traductor-SLD.html">Traductor-SLD</a>
-                </div>
-            </div>
-       
-        </header>
         
         <!--Pagina-->
         
-        <section class ="camara">
-            <div class ="izquierda">
-                <h3>Cámara</h3>
+    <section class ="camara">
+        <div class ="izquierda">
+            <h3>Cámara</h3>
 
-            </div>
+        </div>
 
-            <div class = "derecha">
+        <div class = "derecha">
 
-                <h3>¿Desea agregar esta letra?</h3>
-                <button class = "btnLetra" >J</button>
-                <button class = "btnLetra" >Z</button><br>
-                <textarea readonly = ""></textarea><br>
-                <button class= "botones" > Agregar </button>
-                <button class= "botones" > Espacio </button>
-                <button class= "botones" > Borrar </button><br>
-                <button class= "botones" > Borrar todo </button>
-                <button class= "botones" > Enviar </button>
-                </br>
+            <h3>¿Desea agregar esta letra?</h3>
+            <button class = "btnLetra" >J</button>
+            <button class = "btnLetra" >Z</button><br>
+            <textarea readonly = ""></textarea><br>
+            <button class= "botones" > Agregar </button>
+            <button class= "botones" > Espacio </button>
+            <button class= "botones" > Borrar </button><br>
+            <button class= "botones" > Borrar todo </button>
+            <button class= "botones" > Enviar </button>
+            </br>
 
-                <p class="modelo-text">¿Deseas probar otro de nuestro modelo? <a href="#" id="modelo-boton">Haz click aquí</a></p>
+            <p class="modelo-text">¿Deseas probar otro modelo? <a href="/traductor-inteligencia" id="modelo-boton">Haz click aquí</a></p>
 
-            </div>
-            
-            <script type="text/javascript" src="{% static '/js/nav.js' %}"></script>
-            <script type="text/javascript" src="{% static '/js/cam.js' %}"></script>
-    </body>
+        </div>
+        
+        <script type="text/javascript" src="{% static '/js/nav.js' %}"></script>
+        <script type="text/javascript" src="{% static '/js/cam.js' %}"></script>
+    </section>
+</body>
 </html>
+
+{% endblock %}

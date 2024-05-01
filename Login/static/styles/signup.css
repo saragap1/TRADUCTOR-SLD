@@ -21,6 +21,7 @@ body {
     min-height: 100vh;
 }
 
+
 .container{
     display: flex;
     position: relative;
@@ -31,6 +32,17 @@ body {
     box-shadow: 0 4px 20px 0 rgba(0,0, 0, 0.3),  0 6x 20px 0 rgba(0,0, 0, 0.3);
     overflow: hidden;
     transition: all 1s ease;
+}
+
+
+.informacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(-45deg, #b8dfff, #3996e3 );
+    width: 50%;
+    
 }
 
 form{
@@ -44,6 +56,47 @@ form{
     padding: 0 40px;
 }
 
+.informacion-texto{
+    width: 100%;
+    padding: 50px 10px;
+    color: #f0f0f0;
+}
+
+.informacion-texto h3{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.informacion-texto p{
+    font-size: 15px;
+    margin: 10px 60px ;
+    padding: 10px 0;
+}
+
+.informacion img{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    transition: 1.1 ease-in-out;
+}
+
+.informacion a{
+    border: none;
+    border-radius: 50px;
+    background-color: #0B1957;
+    color: #f0f0f0;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor:pointer;
+    padding: 10px 20px;
+    width: 150px;
+    height: 50px;
+}
+
+.informacion a:hover{
+    background-color: #FFFFFF ;
+    color: #0B1957;
+}
 
 .title{
     font-size: 35px;
@@ -98,4 +151,40 @@ form{
     transform:scale(1.1) ;
 }
 
-/*Responsive*/
+/*responsive*/
+
+@media (max-width:872px){
+    .container{
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width:566px){
+
+    html{
+        font-size: 12px;
+    }
+
+    .container{
+        height: auto;
+        flex-direction: column;
+    }
+
+    .informacion{
+        width: 100%;
+        padding: 20px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    form{
+        width: 100%;
+        padding: 20px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 0px;
+
+    }
+}
