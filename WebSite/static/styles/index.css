@@ -119,6 +119,7 @@ header {
     background-color: rgb(33, 49, 63, .95);
     overflow: hidden;
     transition: all 0.3s ease 0s;
+    margin: 90px;
 }
 
 .header .overlay .overlay-content{
