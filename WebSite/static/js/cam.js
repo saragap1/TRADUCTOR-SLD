@@ -86,7 +86,7 @@ function procesarCamara() {
 
 
 function predecir() {
-    if (modelo != null) {
+    //if (modelo != null) {
         //Pasar canvas a version 28x28
         resample_single(canvas, 28, 28, othercanvas);
 
@@ -97,7 +97,21 @@ function predecir() {
         var arr = []; //El arreglo completo
         var arr28 = []; //Al llegar a arr150 posiciones se pone en 'arr' como un nuevo indice
         for (var p=0; p < imgData.data.length; p+=4) {
+            console.log("r",imgData.data[p]);
+            console.log("g",imgData.data[p+1]);
+            console.log("b",imgData.data[p+2]);
+            console.log("a",imgData.data[p+3]);
             var valor = (0.299*imgData.data[p] + 0.587*imgData.data[p+1] + 0.114*imgData.data[p+2])/255;
+            var c = Math.round(valor*255);
+            if (c < 55) {
+                valor = 0; //exagerarlo
+            } else if (c > 200) {
+                valor = 1; //al infinito
+            }
+            console.log("Gris",valor*255);
+
+        
+            
             arr28.push([valor]); //Agregar al arr150 y normalizar a 0-1. Aparte queda dentro de un arreglo en el indice 0... again
             if (arr28.length == 28) {
                 arr.push(arr28);
@@ -115,9 +129,9 @@ function predecir() {
         var labels = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y'];
         console.log("Prediccion", labels[mayorIndice]);
         document.getElementById("resultado").innerHTML = labels[mayorIndice];
-    }
+    //}
 
-    setTimeout(predecir, 100);
+    //setTimeout(predecir, 100);
 }
 
 
@@ -187,13 +201,10 @@ function resample_single(canvas, width, height, resize_canvas) {
             data2[x2 + 2] = gx_b / weights;
             data2[x2 + 3] = gx_a / weights_alpha;
 
-            //console.log("r",data2[x2]);
-            //console.log("g",data2[x2+1]);
-            //console.log("b",data2[x2+2]);
-            //console.log("a",data2[x2+3]);
+            
         }
     }
-   
+    
 
 
     ctx2.putImageData(img2, 0, 0);
