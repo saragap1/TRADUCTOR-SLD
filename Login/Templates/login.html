@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static '/styles/login.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /> 
+    <title>Únete a SLD</title>
+</head>
+
+<body>
+    <div class = "container">
+        <div class="registro-inicio">
+            <form action = "" class="inicio-espacio">
+                <h2 class = "title"> Inicia sesión </h2>
+                <div class="campo-ingresar-datos">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nombre de usuario">
+                </div>
+                <div class="campo-ingresar-datos">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <input type="submit" value="INICIAR" class="btn">
+                <p class="social-text">O inicia con tus redes sociales</p>
+                <div class = "social-media">
+                    <a href="" class="social-icon">
+                        <i class ="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class ="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class ="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class ="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <p class="account-text">¿No tienes una cuenta? <a href="#" id="registrar-btn2">Regístrate</a>
+            </form>
+
+            <form action = "" class="registro-espacio">
+                <h2 class = "title"> Regístrate </h2>
+                <div class="campo-ingresar-datos">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nombre de usuario">
+                </div>
+                <div class="campo-ingresar-datos">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Correo electrónico ">
+                </div>
+                <div class="campo-ingresar-datos">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <input type="submit" value="REGISTRARSE" class="btn">
+                <p class="social-text">O registrate con tus redes sociales</p>
+                <div class = "social-media">
+                    <a href="" class="social-icon">
+                        <i class ="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class ="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class ="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class ="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <p class="account-text">¿Ya tienes una cuenta? <a href="#" id="iniciar-btn2">Inicia sesión</a>
+
+            </form>
+
+        </div>
+        <div class="panels-container">
+            <div class = "panel panel-izquierdo">
+                <div class="content">
+                    <h3>¿Eres miembro?</h3>
+                    <p>Ingresa tu cuenta y disfruta de nuestras herramientas.</p>
+                    <button class = "btn" id="iniciar-btn">Inicia</button>
+                </div>
+                <img src="../static/imgs/inicio-sesion.png" alt="" class="image">
+            </div>
+            <div class = "panel panel-derecho">
+                <div class="content">
+                    <h3>¿Todavía no tienes una cuenta?</h3>
+                    <p> Crea una cuenta nueva para poder utilizar nuestras herramientas.</p> 
+                    <button class = "btn" id ="registrar-btn">Regístrate</button>
+                </div>
+                <img src="../static/imgs/registro.png" alt="" class="image">
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/login.js"></script>
+</body>
+
+</html>

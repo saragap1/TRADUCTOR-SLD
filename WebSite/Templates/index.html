@@ -1,0 +1,52 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static '/styles/index.css' %}"/>
+    <title>Home</title>
+</head>
+    <body>
+    <header class ="header">
+        <div class="logo">
+            <img src = "{% static '/imgs/Logo.png' %}" width="50">
+        </div>
+    <nav> 
+        <ul class="nav-links">
+            <li><a href = "index.html">Inicio</a></li>
+            <li><a href = "herramientas.html">Herramientas</a></li>
+            <li><a href = "nosotros.html">Nosotros</a></li>
+        </ul>
+    </nav>
+    <a class ="btn" href="Traductor-SLD.html"><button> Traductor SLD</button></a>
+
+    <a onclick="openNav()" class="menu" href="#"><button>Menú</button></a>
+
+    <div class = "overlay" id ="mobile-menu">
+        <a onclick="closeNav()" href="" class="close">&times;</a>
+        <div class="overlay-content">
+            <a href = "index.html">Inicio</a>
+            <a href = "herramientas.html">Herramientas</a>
+            <a href = "nosotros.html">Nosotros</a>
+            <a href = "Traductor-SLD.html">Traductor-SLD</a>
+        </div>
+    </div>
+    </header>
+    <script type="text/javascript" src="nav.js"></script>
+    
+        <section class ="banner" id ="banner">
+            <div class= "content-banner">
+                <h1>Signal<br>Language<br>Detector</h1>
+                <h2>Empieza a traducir ahora<br> mismo  fácil y rápido </h2><br>
+                <a href = "Traductor-SLD.html" class = "btn1" >¡Comienza!</a>
+            </div>
+            <div class = "inicio-img">
+                <img src ="{% static 'imgs/imagenInicio.png' %}">
+            </div>
+        </section>
+
+        <script type="text/javascript" src="{% static '/js/script.js' %}"></script>
+    </body>
+</html>
