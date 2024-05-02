@@ -22,6 +22,7 @@ body {
 }
 
 .container{
+    display: flex;
     position: relative;
     width: 70vw;
     height: 80vh;
@@ -29,31 +30,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 20px 0 rgba(0,0, 0, 0.3),  0 6x 20px 0 rgba(0,0, 0, 0.3);
     overflow: hidden;
-}
-
-.container::before{
-    content: "";
-    position: absolute;
-    top:0;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, #b8dfff, #1776c3 );
-    z-index: 6;
-    transform: translateX(100%);
-    transition: 1s ease-in-out;
-}
-
-.registro-inicio{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around ;
-    z-index: 5;
+    transition: all 1s ease;
 }
 
 form{
@@ -61,27 +38,17 @@ form{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 40%;
+    text-align: center;
+    width: 50%;
     min-width: 238px;
-    padding: 0 10px;
+    padding: 0 40px;
 }
 
-form.inicio-espacio{
-    opacity: 1  ;
-    transition: 0.5s ease-in-out;
-    transition-delay: 1s;
-}
 
-form.registro-espacio{
-    opacity: 0;
-    transition: 0.5s ease-in-out;
-    transition-delay: 1s;
-}
 .title{
     font-size: 35px;
     color: #0B1957;
     margin-bottom: 10px;
-
 }
 
 .campo-ingresar-datos{
@@ -131,182 +98,4 @@ form.registro-espacio{
     transform:scale(1.1) ;
 }
 
-.social-text{
-    margin: 10px 0;
-    font-size: 16px;
-    color: #FFFFFF;
-}
-
-.social-media{
-    display: flex;
-    justify-content: center;
-
-}
-
-.panel-izquierdo{
-    pointer-events: none;   
-}
-
-.social-icon{
-    height: 45px;
-    width: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    border-radius: 50px;
-    border-width: 2px;
-    margin: 0 5px;
-}
-
-a{
-    text-decoration: none;
-}
-
-.social-icon:hover{
-    background-color: #FFFFFF;
-    color: #0B1957;
-    border-color: #0B1957;
-    border-width: 2px;
-}
-
-.panels-container{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.panel{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 35%;
-    min-width: 238px;
-    padding: 0 10px;
-    text-align: center;
-    z-index: 6;
-}
-
-.content{
-    color: #f0f0f0;
-    transition: 1.1s ease-in-out;
-    transition-delay: 0.5s ;
-}
-
-
-.panel h3{
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.panel p{
-    font-size: 15px ;
-    padding: 10px 0;
-}
-
-.image{
-    width: 100%;
-    transition: 1.1 ease-in-out;
-    transition-delay:0.4s;
-}
-
-.panel-izquierdo .image,
-.panel-izquierdo .content{
-    transform: translateX(-200%);
-}
-
-.panel-derecho .image,
-.panel-derecho .content {
-    transform: translateX(0);
-}
-
-.account-text{
-    display: none;
-    color: #f0f0f0;
-}
-
-/*Animación*/
-
-.container.modo-registrar::before{
-    transform: translateX(0);
-}
-
-.container.modo-registrar .panel-derecho .image,
-.container.modo-registrar .panel-derecho .content{
-    transform: translateX(200%);
-}
-
-.container.modo-registrar .panel-izquierdo .image,
-.container.modo-registrar .panel-izquierdo .content{
-    transform: translateX(0);
-}
-
-.container.modo-registrar form.inicio-espacio{
-    opacity: 0;
-}
-
-.container.modo-registrar form.registro-espacio{
-    opacity: 1;
-}
-
-.container.modo-registrar .panel-derecho{
-    pointer-events: none;
-}
-
-.container.modo-registrar .panel-izquierdo{
-    pointer-events: all;
-}
-
 /*Responsive*/
-
-@media (max-width:872px){
-    .container{
-        width: 100vw;
-        height: 100vh;
-    }
-}
-
-@media (max-width:635px){
-    .container::before{
-        display: none;
-    }
-
-    form{
-        width: 80%;
-    }
-
-    form.registro-espacio{
-        display: none;
-    }
-    
-    .container.modo-registar2 form.registro-espacio{
-        display: flex;
-        opacity: 1;
-    }
-
-    .container.modo-registar2 form.inicio-espacio{
-        display: none;
-    }
-
-    .panels-container{
-        display: none;
-    }
-
-    .account-text{
-        display: initial;
-        margin-top: 30px;
-    }
-}
-
-@media (max-width:328px){
-    form{
-        width: 90%;
-    }
-}

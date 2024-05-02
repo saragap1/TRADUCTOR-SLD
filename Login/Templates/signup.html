@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static '/styles/signup.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /> 
+    <title>Únete a SLD</title>
+</head>
+
+<body>
+    <div class = "container">
+        <div class="informacion">
+            <div class ="informacion-texto">
+                <h3> ¿Eres miembro? </h3>
+                <p>Ingresa a tu cuenta y disfruta de nuestras herramientas.</p>
+                <a  href="/.">Inicia</a>
+            </div>
+            <img src="{% static '/imgs/inicio-sesion.png' %}" alt="" class="image">
+        </div>
+        <form action = "" class="registro-espacio" method='POST'>
+            {% csrf_token %}
+            <h2 class = "title"> Regístrate </h2>
+            <div class="campo-ingresar-datos">
+                <i class="fas fa-user"></i>
+                <input type="text" name='username' placeholder="Nombre de usuario">
+            </div>
+            <div class="campo-ingresar-datos">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name='email' placeholder="Correo electrónico ">
+            </div>
+            <div class="campo-ingresar-datos">
+                <i class="fas fa-lock"></i>
+                <input type="password" name='password1' placeholder="Contraseña">
+            </div>
+            <div class = 'campo-ingresar-datos'>
+                <i class = 'fas fa-lock'></i>
+                <input type = 'password' name='password2' placeholder = "Confirme contraseña">
+            </div>
+            {{error}}
+            <input type="submit" value="REGISTRARSE" class="btn">
+        </form>
+    </div>
+</body>
+</html>

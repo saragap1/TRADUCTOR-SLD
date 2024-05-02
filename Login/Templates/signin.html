@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static '/styles/login2.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /> 
+    <title>Inicia sesión en SLD</title>
+</head>
+
+<body>
+    <div class = "container">
+        <form action = "" class="inicio-espacio" method='POST'>
+            {% csrf_token %}
+            <h2 class = "title"> Inicia sesión </h2>
+            <div class="campo-ingresar-datos">
+                <i class="fas fa-user"></i>
+                <input type="text" name='username' placeholder="Nombre de usuario">
+            </div>
+            <div class="campo-ingresar-datos">
+                <i class="fas fa-lock"></i>
+                <input type="password" name='password' placeholder="Contraseña">
+            </div>
+            {{error}}
+            <input type="submit" value="INICIAR" class="btn">
+        </form>
+        
+        <div class="informacion">
+            <div class ="informacion-texto">
+                <h3> ¿Todavía no tienes una cuenta? </h3>
+                <p>Crea una cuenta nueva para poder utilizar nuestras herramientas.</p>
+                <a href="/sign-up">Regístrate</a>
+            </div>
+            <img src="{% static '/imgs/registro.png' %}" alt="" class="image">
+        </div>
+    </div>
+</body>
+</html>
