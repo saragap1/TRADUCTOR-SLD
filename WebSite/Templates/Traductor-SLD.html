@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Traductor SLD</title>
         <link rel="stylesheet" href ="{% static '/styles/traductor.css' %}"/>
     </head>
@@ -40,12 +42,16 @@
         <section class ="camara">
             <div class ="izquierda">
                 <h3>Cámara</h3>
-
+                <video id="video_camara" playsinline autoplay style ="width: 1px;"></video>
+                <button class="btn btn-primary mb-2" id="cambiar-camara" onclick="cambiarCamara();">Cambiar camara</button>
+                <canvas id="canva_camara" width ="400" height="400" style="max-width: 100%;"></canvas>
+                <canvas id="canva_camara_pequenia" width ="28" height="28" style="display: none"></canvas>
+                <button class="btn btn-success" id="predecir" onclick="predecir()">Predecir</button>
             </div>
 
             <div class = "derecha">
                 <h3>¿Desea agregar esta letra?</h3>
-                <a href = "#" class = "btnLetra" >J</a><br>
+                <div id="resultado"></div> 
                 <textarea readonly = "">Texto...</textarea><br>
                 <button id="Agregar">Agregar</button>
                 <a href = "" class =botones id = "agregar" ></a>
@@ -55,7 +61,20 @@
                 </br>
             </div>
             
+            <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
             <script type="text/javascript" src="{% static '/js/nav.js' %}"></script>
             <script type="text/javascript" src="{% static '/js/cam.js' %}"></script>
+            
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
