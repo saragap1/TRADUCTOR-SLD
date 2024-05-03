@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'WebSite',
-    'Mailing',
     'Login'
 ]
 
@@ -133,4 +132,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = DEFAULT_FROM_EMAIL 
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'bmiygalsjptvgxtn'
