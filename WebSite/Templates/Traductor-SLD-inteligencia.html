@@ -1,13 +1,12 @@
 {% extends 'layouts/menu.html' %}
 {% load static %}
-
 {% block content %}
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>Traductor SLD</title>
-        <link rel="stylesheet" href ="{% static '/styles/traductor.css' %}"/>
+        <link rel="stylesheet" href ="{% static '/styles/traductor-2.css' %}"/>
     </head>
         
         <!--Pagina-->
@@ -21,17 +20,23 @@
         <div class = "derecha">
 
             <h3>¿Desea agregar esta letra?</h3>
-            <button class = "btnLetra" >J</button>
-            <button class = "btnLetra" >Z</button><br>
+            <div class="letter_box">
+                <h2 id="letter">letra</h2>
+            </div>
+            
             <textarea readonly = ""></textarea><br>
             <button class= "botones" > Agregar </button>
             <button class= "botones" > Espacio </button>
             <button class= "botones" > Borrar </button><br>
             <button class= "botones" > Borrar todo </button>
-            <button class= "botones" > Enviar </button>
-            </br>
+            <button class = "botones" >J</button>
+            <button class = "botones" >Z</button><br>
 
-            <p class="modelo-text">¿Deseas probar otro modelo? <a href="/traductor" id="modelo-boton">Haz click aquí</a></p>
+            </br>
+            <p>
+                {{ error }}
+            </p>
+            <p class="modelo-text">¿Deseas probar otro modelo? <a href="/website/traductor" id="modelo-boton">Haz click aquí</a></p>
 
         </div>
         

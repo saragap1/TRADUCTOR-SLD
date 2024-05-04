@@ -94,7 +94,7 @@ header {
     transform:scale(1.1) ;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1221px){
     .nav-links, .btn{
         display:none;
     }
@@ -183,25 +183,23 @@ header {
     grid-gap: 1.5rem;
     align-items: center;
     margin-top: 4rem;
+    color: #274472;
+    text-align: justify;
 }
 
 .h-box{
-    text-align: center;
-    padding: 20px 30px;
-}
-
-.h-box img{
-    width: 200px;
+    text-align: justify;
 }
 
 .h-box h3{
-    margin: 4px 0 10px;
-    color: #274472;
+    color: #0B1957;
     font-size: 1.5rem;
 }
 
 .h-box p{
     line-height:1.7 ;
+    color: #FFFFFF;
+    
 }
 
 @media (max-width:770px) {

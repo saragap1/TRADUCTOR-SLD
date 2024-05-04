@@ -15,30 +15,33 @@
         <div class="informacion">
             <div class ="informacion-texto">
                 <h3> ¿Eres miembro? </h3>
-                <p>Ingresa tu cuenta y disfruta de nuestras herramientas.</p>
-                <a  href="/login">Inicia</a>
+                <p>Ingresa a tu cuenta y disfruta de nuestras herramientas.</p>
+                <a  href="/.">Inicia</a>
             </div>
             <img src="{% static '/imgs/inicio-sesion.png' %}" alt="" class="image">
         </div>
-
-        
-        <form action = "" class="registro-espacio">
+        <form action = "" class="registro-espacio" method='POST'>
+            {% csrf_token %}
             <h2 class = "title"> Regístrate </h2>
             <div class="campo-ingresar-datos">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Nombre de usuario">
+                <input type="text" name='username' placeholder="Nombre de usuario">
             </div>
             <div class="campo-ingresar-datos">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Correo electrónico ">
+                <input type="email" name='email' placeholder="Correo electrónico ">
             </div>
             <div class="campo-ingresar-datos">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Contraseña">
+                <input type="password" name='password1' placeholder="Contraseña">
             </div>
+            <div class = 'campo-ingresar-datos'>
+                <i class = 'fas fa-lock'></i>
+                <input type = 'password' name='password2' placeholder = "Confirme contraseña">
+            </div>
+            {{error}}
             <input type="submit" value="REGISTRARSE" class="btn">
         </form>
-        
     </div>
 </body>
 </html>

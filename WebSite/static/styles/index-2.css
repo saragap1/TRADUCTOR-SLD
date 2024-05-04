@@ -7,16 +7,16 @@
     box-sizing: border-box;
     margin: 0;
     padding:0;
-    font-family: "Poppins", sans-serif;
     font-size: 20px;
     list-style: none;
     text-decoration: none;
     scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
 }
 
 :root{
-    --big-font: 4.5rem;
-    --h2-font: 1.5rem;
+    --big-font: 4rem;
+    --h2-font: 1rem;
     --p-font: 0.9rem;
 }
 
@@ -94,7 +94,7 @@ header {
     transform:scale(1.1) ;
 }
 
-@media screen and (max-width: 880px){
+@media screen and (max-width: 1221px){
     .nav-links, .btn{
         display:none;
     }
@@ -165,7 +165,7 @@ header {
 /* SECCION 1 INICIO*/
 
 section{
-    padding: 70px 17%;
+    padding: 60px 17%;
 }
 .banner{
     width: 100%;
@@ -176,12 +176,13 @@ section{
     align-items: center;
 }
 .inicio-img img{
-    max-width: 100%;
+    max-width: 150%;
     width: 600px;
     height: auto;
 }
+
 .content-banner h1{
-    font-family: "Oswald", sans-serif;
+    font-family: 'Poppins', sans-serif;    
     font-size: var(--big-font);
     color: #0B1957;
 }
@@ -190,19 +191,20 @@ section{
     color: #274472;
 }
 .content-banner .btn1{
+    font-family: 'Poppins', sans-serif;
     display: inline-block;
     padding: 10px 20px;
     background-color: #FEECD4 ;
     color:#0B1957;
     border-radius: 30px;
     border:none;
-    font-family: "Oswald", sans-serif;
+
 }
 .content-banner .btn1:hover{
     transform: scale(1.1); 
     transition: .4s;
 }
-@media (max-width:720px) {
+@media (max-width:1115px) {
     .header{
         padding:10px 16px ;
     }

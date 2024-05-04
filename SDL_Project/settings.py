@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'WebSite',
-    'Mailing',
     'Login'
 ]
 
@@ -120,6 +119,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+LOGIN_URL = '/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -131,4 +132,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = DEFAULT_FROM_EMAIL 
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'bmiygalsjptvgxtn'
