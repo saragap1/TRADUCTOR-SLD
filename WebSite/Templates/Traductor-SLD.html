@@ -13,7 +13,7 @@
         
     <section class ="camara">
         <div class ="izquierda">
-            <h3>Cámara</h3>
+         
                 <video id="video_camara" playsinline autoplay style ="width: 1px;"></video>
                 <!-- <button class="btn btn-primary mb-2" id="cambiar-camara" onclick="cambiarCamara();">Cambiar camara</button> -->
                 <canvas id="canva_camara" width ="400" height="400" style="max-width: 100%;"></canvas>
@@ -35,14 +35,20 @@
             <div class="letter_box">
                 <h2 id="resultado"></h2>
             </div>
+            
             <div class="center">
                 <div class="btnBox">
-                    <button class= "botones" > Agregar </button>
-                    <button class= "botones" > Espacio </button>
-                    <button class= "botones" > Borrar </button>
-                    <button class= "botones" > Borrar todo </button>
+                    <button id="agregar-btn" class="botones">Agregar</button>
+                    <button id="espacio-btn" class="botones">Espacio</button>
+                    <button id="borrar-btn" class="botones">Borrar</button>
+                    <button id="borrar-todo-btn" class="botones">Borrar todo</button>
+                    <button id="J-btn" class="botones">J</button>
+                    <button id="Ñ-btn" class="botones">Ñ</button>
+                    <button id="Z-btn" class="botones">Z</button>
                 </div>
+
             </div>
+            
             
             <form action="" method="POST">
                 {% csrf_token %}

@@ -218,3 +218,62 @@ function resample_single(canvas, width, height, resize_canvas) {
     ctx2.putImageData(img2, 0, 0);
     
 }
+
+const agregarBtn = document.getElementById('agregar-btn');
+const espacioBtn = document.getElementById('espacio-btn');
+const borrarBtn = document.getElementById('borrar-btn');
+const borrarTodoBtn = document.getElementById('borrar-todo-btn');
+const J = document.getElementById('J-btn');
+const Z = document.getElementById('Z-btn');
+const Ñ = document.getElementById('Ñ-btn');
+
+
+agregarBtn.addEventListener('click', agregarLetra);
+espacioBtn.addEventListener('click', agregarEspacio);
+borrarBtn.addEventListener('click', borrarLetra);
+borrarTodoBtn.addEventListener('click', borrarTodo);
+J.addEventListener('click', agregar_J);
+Z.addEventListener('click', agregar_Z);
+Ñ.addEventListener('click', agregar_Ñ);
+
+
+const resultadoElement = document.getElementById('resultado');
+const idContentInput = document.getElementById('id_content');
+
+function agregarLetra() {
+  const resultadoText = resultadoElement.textContent;
+  idContentInput.value += resultadoText;
+}
+function agregarLetra() {
+    const resultadoText = resultadoElement.textContent;
+    idContentInput.value += resultadoText;
+ }
+
+function agregarEspacio() {
+    var cuadroDeTexto = document.getElementById("id_content");
+    cuadroDeTexto.value += " ";
+}
+
+function borrarLetra() {
+    var cuadroDeTexto = document.getElementById("id_content");
+    cuadroDeTexto.value = cuadroDeTexto.value.slice(0, -1);
+}
+
+function borrarTodo() {
+    document.getElementById("id_content").value = "";
+}
+
+function agregar_J() {
+    var cuadroDeTexto = document.getElementById("id_content");
+    cuadroDeTexto.value += "J";
+  }
+  
+  function agregar_Ñ() {
+    var cuadroDeTexto = document.getElementById("id_content");
+    cuadroDeTexto.value += "Ñ";
+  }
+  
+  function agregar_Z() {
+    var cuadroDeTexto = document.getElementById("id_content");
+    cuadroDeTexto.value += "Z";
+  }
