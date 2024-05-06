@@ -25,19 +25,19 @@
             <h2 class = "title"> Regístrate </h2>
             <div class="campo-ingresar-datos">
                 <i class="fas fa-user"></i>
-                <input type="text" name='username' placeholder="Nombre de usuario">
+                <input type="text" name='username' placeholder="Nombre de usuario" required>
             </div>
             <div class="campo-ingresar-datos">
                 <i class="fas fa-envelope"></i>
-                <input type="email" name='email' placeholder="Correo electrónico ">
+                <input type="email" name='email' placeholder="Correo electrónico " required>
             </div>
             <div class="campo-ingresar-datos">
                 <i class="fas fa-lock"></i>
-                <input type="password" name='password1' placeholder="Contraseña">
+                <input type="password" name='password1' placeholder="Contraseña" required>
             </div>
             <div class = 'campo-ingresar-datos'>
                 <i class = 'fas fa-lock'></i>
-                <input type = 'password' name='password2' placeholder = "Confirme contraseña">
+                <input type = 'password' name='password2' placeholder = "Confirme contraseña" required>
             </div>
             {{error}}
             <input type="submit" value="REGISTRARSE" class="btn">
