@@ -277,3 +277,15 @@ function agregar_J() {
     var cuadroDeTexto = document.getElementById("id_content");
     cuadroDeTexto.value += "Z";
   }
+
+  //hacer funcional el teclado
+  window.onkeydown = function(event) {
+    switch (event.keyCode) {
+      case 13: // Enter
+        agregarLetra();
+      case 32: // Space
+        agregarEspacio();
+      case 8: // Backspace
+        borrarLetra();
+    }
+  };
