@@ -1,8 +1,10 @@
+// Se guardan los canvas y el video en variables para luego ser usados
 var video = document.getElementById("video_camara");
 var canvas = document.getElementById("canva_camara");
 var ctx = canvas.getContext("2d");
 var othercanvas = document.getElementById("canva_camara_pequenia");
 var ctx2 = othercanvas.getContext("2d");
+
 
 var modelo = null;
 var size = 400;
@@ -11,16 +13,20 @@ var camaras = [];
 var currentStream = null;
 var facingMode = "user"; 
 
+// Se importa el modelo en una variable
 (async () => {
     console.log("Cargando modelo...");
     modelo = await tf.loadLayersModel("/static/modelo_definitivo/model.json");
     console.log("Modelo cargado...");
 })();
 
+// Todo el tiempo se va a estar ejecutando mostrarCamara()
 window.onload = function() {
     mostrarCamara();
 }
 
+// Permite saber si existe alguna camara posible y si es asi, comienza a procesarla con el canvas 400x400 guardando su data
+// luego se ejecuta predecir()
 function mostrarCamara() {
 
     var opciones = {
@@ -47,6 +53,7 @@ function mostrarCamara() {
     }
 }
 
+// Funcion creada por si es necesario cambiar la camara, detectando si hay otra camaras posibles en el dispositivo
 function cambiarCamara() {
     if (currentStream) {
         currentStream.getTracks().forEach(track => {
@@ -74,6 +81,7 @@ function cambiarCamara() {
         })
 }
 
+// Funcion donde se procesa el canva 400x400 cada 20 milisegundos y sus datos son guardados
 function procesarCamara() {
         
     var ctx = canvas.getContext("2d");
@@ -84,6 +92,13 @@ function procesarCamara() {
 }
 
 
+// Funcion en el que primero se ejecuta resample_single, funcion que tiene el objetivo de transformar los datos del canvas 400x400 al canvas de 28x28, llamada othercanvas
+// luego se recorre cada valor de la escala RGB con valor alfa de los datos guardados en imgData de cada uno de los pixeles y se aplica una formula para calcular el
+// nivel de escala de grises y posterior se aplica un filtro para exagerar los pixeles para apoyar al modelo en su prediccion y por ultimo se colaca los valores de la 
+// escala de grises de cada pixel ya calculados en la lista 28 para que cuando se complete, se continue con la siguiente fila de 28 pixeles hasta que se completen los 784 pixeles.
+// Una vez que se logra esto, se le aplica el elemento de la libreria tensorflowjs llamada tensor4 que nos permitira usar la variable donde se guardo el modelo y poder predecir
+// la lista que acabamos de guardar, dandonos todos los resultados de todas las letras, luego tomamos el de mayor puntaje para decidir la prediccion, dandonos la posicion de la letra de la predicion
+// y con eso lo buscamos en la lista Labels que contiene las letras y asi porfin, lograr mandarlo al elemento con ID "resultado" en el HTML y poder mostrarlo.
 
 function predecir() {
     if (modelo != null) {
@@ -121,8 +136,7 @@ function predecir() {
             }
         }
 
-        arr = [arr]; //Meter el arreglo en otro arreglo por que si no tio tensorflow se enoja >:(
-        //Nah basicamente Debe estar en un arreglo nuevo en el indice 0, por ser un tensor4d en forma 1, 150, 150, 1
+        arr = [arr]; 
         
         var tensor4 = tf.tensor4d(arr);
         var resultados = modelo.predict(tensor4).dataSync();
@@ -144,6 +158,13 @@ function predecir() {
 
 
 
+// Funcion que permite modificar la resolucion de un canvas a otro canvas, en nuestro caso, el canvas de 400x400 se va a reducir a una resolucion de 28x28 que seria la variable
+// resize_canvas digitada, luego de aplicar el algoritmo, nos arroja la data del canal RGB con posiciones Rojo:0, Verde: 1, Azul: 2 y alfa: 3, el alfa tiene siempre el valor 255
+// debido a que el algoritmo esta recibiendo data a color, a cambio si no lo fuera, el alfa seria la escala de grises y los demas canales estarian en 0.
+
+// Funcion usada de un video guia para modificar la resolucion de un canvas a otro canvas, tomada de:
+
+// Tech, R. [@RingaTech]. (2021c, julio 28). Usa tus modelos de Tensorflow en páginas web | Exportación a Tensorflow.js. Youtube. https://www.youtube.com/watch?v=JpE4bYyRADI
 
 function resample_single(canvas, width, height, resize_canvas) {
     var width_source = canvas.width;
@@ -218,6 +239,9 @@ function resample_single(canvas, width, height, resize_canvas) {
     ctx2.putImageData(img2, 0, 0);
     
 }
+
+
+//Funciones creados para poder ejecutar los botones del HTML
 
 const agregarBtn = document.getElementById('agregar-btn');
 const espacioBtn = document.getElementById('espacio-btn');
